@@ -22,6 +22,9 @@ class SpotifyController:
     
     def pause(self):
         self.sp.pause_playback()
+        
+    def play(self):
+        self.sp.start_playback()
 
     def next_track(self):
         self.sp.next_track()
