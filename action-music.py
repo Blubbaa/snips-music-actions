@@ -40,7 +40,7 @@ def on_message(client, userdata, msg):
 
 spotify = SpotifyController()
 
-actions = {"pause":  spotify.pause}
+actions = {"pause":  spotify.pause, "play":  spotify.play}
 #, "restartPlaylist", "volume_down", "shuffleMode", "next", "volume_up", "repeatMode", "play", "addPlaylist", "playResource", "previous"]
 
 client = mqtt.Client()
