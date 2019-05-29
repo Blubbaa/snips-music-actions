@@ -17,10 +17,13 @@ class SpotifyController:
 		self.sp = spotipy.Spotify(auth=self.token)
 	
 	def pause(self):
+		print('pause')
 		self.sp.pause_playback()
 		
 	def play(self):
+		print('play')
 		self.sp.start_playback()
 
 	def next_track(self):
+		print('next track')
 		self.sp.next_track()
