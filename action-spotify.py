@@ -21,7 +21,7 @@ class SpotifyPlayer(object):
 
 	def __init__(self):
 		self.spotify = SpotifyController()
-		self.actions = {"pause":  self.spotify.pause, "play":  self.spotify.play, "next", self.spotify.next_track}
+		self.actions = {"pause":  self.spotify.pause, "play":  self.spotify.play, "next": self.spotify.next_track}
 		
 		# start listening to MQTT
 		self.start_blocking()

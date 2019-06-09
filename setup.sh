@@ -25,6 +25,8 @@ then
     . $VENV/bin/activate
     pip3 install -r requirements.txt
 
+	# make actions executable
+	chmod +x /var/lib/snips/skills/snips-music-actions/action-music.py /var/lib/snips/skills/snips-music-actions/action-spotify.py
 else
     >&2 echo "Cannot find Python 3. Please install it."
 fi
