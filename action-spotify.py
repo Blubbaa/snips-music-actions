@@ -9,7 +9,7 @@ from spotify_controller import SpotifyController
 # If this skill is supposed to run on the satellite,
 # please get this mqtt connection info from <config.ini>
 # Hint: MQTT server is always running on the master device
-MQTT_IP_ADDR = "localhost"
+MQTT_IP_ADDR = "raspberrypi"
 MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
@@ -30,8 +30,10 @@ class SpotifyPlayer(object):
 	def master_intent_callback(self,hermes, intent_message):
 		coming_intent = intent_message.intent.intent_name
 		print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-		if coming_intent in self.actions
+		if coming_intent in self.actions:
 			self.actions[coming_intent]()
+		else:
+			print("Action: '", coming_intent, "' not found")
 		
 	# --> Register callback function and start MQTT
 	def start_blocking(self):
